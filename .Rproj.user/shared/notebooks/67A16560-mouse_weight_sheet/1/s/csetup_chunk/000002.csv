@@ -1,0 +1,4 @@
+"0","library(data.table)"
+"0","library(kableExtra)"
+"0","library(maditr)"
+"0","knitr::opts_chunk$set(echo = FALSE)"

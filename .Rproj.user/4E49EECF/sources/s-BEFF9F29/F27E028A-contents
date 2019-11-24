@@ -1,0 +1,17 @@
+# `data.table` helpers (`dth`)
+
+<!-- badges: start -->
+[![Build Status](https://travis-ci.org/dbrookeUAB/miknn.svg?branch=master)](https://travis-ci.org/dbrookeUAB/miknn)
+[![Code Size](https://img.shields.io/github/languages/code-size/dbrookeUAB/miknn.svg)](https://github.com/dbrookeUAB/miknn)
+[![Last Commit](https://img.shields.io/github/last-commit/dbrookeUAB/miknn.svg)](https://github.com/dbrookeUAB/miknn/commits/master)
+<!-- badges: end -->
+
+I love using `data.table` and I spend most of my timein the console exploring through data. This package contains an array of functions meant to make data exploration in the console faster and easier. 
+
+These are not meant to be used for scripts or functions.
+
+## Installation
+
+```r
+remotes::install_github('dbrookeUAB/dth)
+```

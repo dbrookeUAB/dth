@@ -1,0 +1,132 @@
+'+.FSTdata' <- function(d1, d2) {
+  d2name <- deparse(substitute(d2))
+  if(is.FSTrnaseq(d1)){
+    if(is.FSTbiospecimen(d2)){
+      add_biospecimen(d1,d2)
+    } else if(is.FSTclinical(d2)){
+      add_clinical(d1,d2)
+    } else if(is.function(d2)){
+      fun_body <- as.character(functionBody(d2)[2])
+      if(grepl('biospecimen',fun_body)|grepl('clinical',fun_body)){
+        d2(d1)
+      } else {
+        stop('Cannot add a function to FSTdata', call. = FALSE)
+      }
+      
+    } else {
+      stop('Can only add either biospecimen or clinical data.',call. = FALSE)
+    }
+  } else {
+    stop("Must start with gene expression data. class(x)=='FSTrnaseq'")
+  }
+}
+
+
+is.FSTrnaseq <- function(x) {
+  'FSTrnaseq' %in% class(x)
+}
+
+is.FSTbiospecimen <- function(x){
+  'FSTbiospecimen' %in% class(x)
+}
+
+is.FSTclinical <- function(x){
+  'FSTclinical' %in% class(x)
+}
+
+
+add_biospecimen <- function(d1, d2) {
+  require(data.table)
+  
+  req_cols <- c("project_short_name", "case_barcode",'sample_barcode' ,colnames(d2))  # columns wants from clinical dataset
+  req_cols <- req_cols[!duplicated(req_cols)]
+  
+  tmp1<- add_key(d1)
+  tmp2 <- add_key(biospecimen[,.SD,.SDcols = req_cols])
+  
+  key_names <- c('project_short_name',
+                 'case_barcode',
+                 'sample_barcode',
+                 'aliquot_barcode') 
+  
+  tmp_names <- c(key_names[key_names %in% colnames(tmp1)],
+                 key_names[key_names %in% colnames(tmp2)])
+  
+  tmp_names <- tmp_names[duplicated(tmp_names)]
+  
+  setkeyv(tmp1, tmp_names)
+  setkeyv(tmp2, tmp_names)
+  
+  result <-tmp2[tmp1]
+  class(result) <- get_FSTclass(d1,d2)
+  return(result)
+}
+
+
+
+add_clinical <- function(d1,d2) {
+  require(data.table)
+  
+  req_cols <- c("project_short_name", "case_barcode" ,colnames(d2))  # columns wants from clinical dataset
+  req_cols <- req_cols[!duplicated(req_cols)]
+  
+  tmp1<- add_key(d1)
+  tmp2 <- add_key(clinical[,.SD,.SDcols = req_cols])
+  
+  key_names <- c('project_short_name',
+                 'case_barcode',
+                 'sample_barcode',
+                 'aliquot_barcode') 
+  
+  tmp_names <- c(key_names[key_names %in% colnames(tmp1)],
+                 key_names[key_names %in% colnames(tmp2)])
+  
+  tmp_names <- tmp_names[duplicated(tmp_names)]
+  
+  setkeyv(tmp1, tmp_names)
+  setkeyv(tmp2, tmp_names)
+  result <- tmp2[tmp1]
+  class(result) <- get_FSTclass(d1,d2)
+  return(result)
+}
+
+add_key <- function(d1){
+  key_names <- c('project_short_name',
+                 'case_barcode',
+                 'sample_barcode',
+                 'aliquot_barcode') 
+  
+  tmp_key <- key_names[key_names %in% colnames(d1)]
+  
+  setkeyv(sample_key, tmp_key)
+  setkeyv(d1, tmp_key)
+  sample_key[d1, nomatch=0]
+}
+
+get_FSTclass <- function(d1,d2) {
+  fst_classes <- c('FSTdata','FSTrnaseq','FSTclinical','FSTbiospecimen',
+                   'data.table','data.frame')
+  fst_classes[fst_classes %in% c(class(d1),class(d2))]
+}
+
+
+prep_survival <- function(df, event_col = 'vital_status', event_types = c('Alive','Dead')){
+  x <- copy(df)
+  if('FSTclinical' %in% class(x)){
+    x[get(event_col) %in% event_types,event:=as.integer(as.factor(get(event_col)))][]
+  } else {
+    stop('Must contain clinical data', call. = FALSE)
+  }
+}
+
+
+wrap_function <- function(body, pipe, env)
+{
+  
+  if (is_tee(pipe)) {
+    body <- call("{", body, quote(.))
+  } else if (is_dollar(pipe)) {
+    body <- substitute(with(., b), list(b = body))
+  } 
+  eval(call("function", as.pairlist(alist(.=)), body), env, env)
+}

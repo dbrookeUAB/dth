@@ -1,0 +1,9 @@
+# DT.helpers (`dth`)
+
+I love using `data.table` and I spend most of my timein the console exploring through data. This package contains an array of functions meant to make data exploration in the console faster and easier. 
+
+## Installation
+
+```r
+remotes::install_github('dbrookeUAB/dth)
+```

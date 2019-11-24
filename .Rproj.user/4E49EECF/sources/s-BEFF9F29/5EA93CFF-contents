@@ -1,0 +1,21 @@
+#' Shortcuts for a lazy person
+#'
+#' @param x 
+#' @param keep.rownames 
+#' @param ... 
+#'
+#' @return
+#' @export
+#' @note This is to be used only for console work and not to be used in fuctions. 
+#' @examples
+adt <- function(x, keep.rownames=FALSE, ...){
+  as.data.table(x, keep.rownames=FALSE, ...)
+}
+
+sk <- function(x, ..., verbose=getOption("datatable.verbose"), physical = TRUE){
+  setkey(x, ..., verbose=getOption("datatable.verbose"), physical = TRUE)
+}
+
+sn <- function(x,old,new,skip_absent=FALSE){
+  setnames(x,old,new,skip_absent=FALSE)
+}

@@ -1,0 +1,74 @@
+[
+    {
+        "definitions" : [
+            {
+                "column" : 13,
+                "file" : "/rdx/projects/dth/src/getOsName.cpp",
+                "kind" : 6,
+                "line" : 15,
+                "name" : "getOsName",
+                "parent_name" : "",
+                "usr" : "c:@F@getOsName#"
+            },
+            {
+                "column" : 6,
+                "file" : "/rdx/projects/dth/src/getOsName.cpp",
+                "kind" : 6,
+                "line" : 32,
+                "name" : "is_mac",
+                "parent_name" : "",
+                "usr" : "c:@F@is_mac#"
+            }
+        ],
+        "file" : "/rdx/projects/dth/src/getOsName.cpp",
+        "file_last_write" : 1574560409.000000
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/rdx/projects/dth/src/init.c",
+        "file_last_write" : 1562460830.000000
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 8,
+                "file" : "/rdx/projects/dth/src/vector-sum.cpp",
+                "kind" : 3,
+                "line" : 21,
+                "name" : "Sum",
+                "parent_name" : "",
+                "usr" : "c:@S@Sum"
+            },
+            {
+                "column" : 9,
+                "file" : "/rdx/projects/dth/src/vector-sum.cpp",
+                "kind" : 7,
+                "line" : 34,
+                "name" : "operator(std::size_t, std::size_t)",
+                "parent_name" : "Sum",
+                "usr" : "c:@S@Sum@F@operator()#l#l#"
+            },
+            {
+                "column" : 9,
+                "file" : "/rdx/projects/dth/src/vector-sum.cpp",
+                "kind" : 7,
+                "line" : 39,
+                "name" : "join(const Sum &)",
+                "parent_name" : "Sum",
+                "usr" : "c:@S@Sum@F@join#&1$@S@Sum#"
+            },
+            {
+                "column" : 8,
+                "file" : "/rdx/projects/dth/src/vector-sum.cpp",
+                "kind" : 6,
+                "line" : 45,
+                "name" : "parallelVectorSum(Rcpp::NumericVector)",
+                "parent_name" : "",
+                "usr" : "c:@F@parallelVectorSum#I#"
+            }
+        ],
+        "file" : "/rdx/projects/dth/src/vector-sum.cpp",
+        "file_last_write" : 1562460830.000000
+    }
+]

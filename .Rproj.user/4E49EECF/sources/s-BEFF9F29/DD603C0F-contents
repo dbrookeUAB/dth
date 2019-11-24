@@ -1,0 +1,21 @@
+dth_wilcox <- function(formula, dt, by = NULL){
+  require(progress)
+  by_col <- dt[,unique(get(by))]
+  
+  pb <- progress_bar$new(
+    format = "  wilcox :what [:bar] :percent eta: :eta",
+    clear = FALSE, 
+    total = length(by_col), 
+    width = 60)
+
+  fn <- function(x, dt){
+    res <- wilcox.test(formula, dt[get(by)==x])
+    pb$tick( tokens  = list(what = x))
+    return(res)
+  }
+  
+  result <- as.data.table(cbind(by_col, do.call(rbind, lapply( by_col, function(x) fn(x,dt)))))
+  
+  setnames(result, "by_col", by)
+  return(result)
+}

@@ -1,0 +1,38 @@
+#' Anova formatted for use inside data.tables
+#'
+#' @param formula 
+#' @param DT
+#'
+#' @return
+#' @export
+#'
+#' @examples
+dth_aov <- function(formula, DT, by){
+  if(!data.table::is.data.table(DT)){
+    DT <- as.data.table(DT)
+  }
+  result <- DT[,{
+    tmp <- anova(aov(formula, .SD))
+    tmp1 <- as.data.table(tmp[1,])
+    tmp2 <- as.data.table(tmp[2,1:3])
+    tmp <- as.data.table(cbind(tmp1,tmp2))[,c(4,5,1,6,2,7,3,8)]
+    colnames(tmp) <- c("F value", "Pr(>F)", 'DF','DF Residuals','Sum Sq', "Sum Sq Residuals",'Mean Sq', 'Mean Sq Residuals')
+    tmp
+  },by]
+  
+  result[,]
+  return(result)
+}
+
+dth_aov2 <- function(formula, DT){
+  anova(aov(formula, data = DT))[1,-1]
+}
+
+
+dth_wilcox <- function(formula, DT, by){
+  DT[,{
+
+    class(res$parameter) <- 'integer'
+    res
+  }, by]
+}

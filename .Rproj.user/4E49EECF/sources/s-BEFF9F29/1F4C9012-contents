@@ -1,0 +1,17 @@
+#' Title
+#'
+#' @param l 
+#' @param idcol 
+#'
+#' @return
+#' @export
+#'
+#' @examples
+cbindlist <- function(l, idcol=NULL ){
+  result <- l[[1]]
+  
+  for (i in l[-1]) {
+    result <- result[i]
+  }
+  return(result)
+}

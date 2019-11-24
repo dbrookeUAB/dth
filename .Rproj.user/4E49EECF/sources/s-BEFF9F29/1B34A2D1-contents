@@ -1,0 +1,23 @@
+# FSTrnaseq
+
+<!-- badges: start -->
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dcc40d86-7cd2-4a63-9467-844bb413a1de/deploy-status)](https://app.netlify.com/sites/relaxed-joliot-3ba734/deploys)
+[![Pipline Status](https://gitlab.com/dbrookeUAB/fstrnaseq/badges/master/build.svg)](https://gitlab.com/dbrookeUAB/fstrnaseq/pipelines)
+[![Build Status](https://img.shields.io/gitlab/pipeline/dbrookeUAB/FSTrnaseq)](https://gitlab.com/dbrookeUAB/fstrnaseq)
+<!-- badges: end -->
+
+This package enables quick retrieval of gene expression data from the entire TCGA RNAseq dataset along with any of available clinical or biological annotations. 
+
+## Installation
+
+You can install the developmental version of FSTrnaseq from [Gitlab](https://gitlab.com/dbrookeUAB/fst_rnaseq) with:
+
+``` r
+remotes::install_gitlab("dbrookeUAB/FSTrnaseq")
+```
+
+Because this package contains all RNAseq data from the TCGA, the package is very large (~5.5GB) and might take awhile to install. 
+
+
+
+

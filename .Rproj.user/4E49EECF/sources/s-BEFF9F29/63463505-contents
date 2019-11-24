@@ -1,0 +1,26 @@
+Package: GeCKO
+Title: Access and edit gRNA sequences from the GeCKO Library
+Version: 0.1
+Date: 2019-06-21
+Authors@R: c(
+    person("Dewey", "Brooke", , "dbrooke@uab.edu", role = c("aut", "cre"), 
+      comment = c(ORCID = "0000-0003-4290-3809")
+    )
+    )
+Maintainer: Dewey Brooke <dbrooke@uab.edu>
+Description: Access and edit gRNA sequences from the GeCKO Library
+License: GPL (>= 2)
+Depends:
+    R (>= 3.5)
+Imports: 
+  Rcpp (>= 1.0.1), 
+  data.table,  
+  fst, 
+  stringr
+biocViews: Biostrings
+LinkingTo: Rcpp
+RoxygenNote: 6.1.1
+URL: https://github.com/dbrookeUAB/GeCKO
+BugReports: https://github.com/dbrookeUAB/GeCKO/issues
+Suggests: 
+    covr
