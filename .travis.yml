@@ -5,7 +5,7 @@ before_install: R -e 'source("https://install-github.me/r-lib/remotes")'
 deploy:
   provider: script
   script: Rscript -e 'pkgdown::deploy_site_github(devel = TRUE)'
-  skip_cleanup: false
+  skip_cleanup: true
 language: R
 cache: packages
 r_packages:
