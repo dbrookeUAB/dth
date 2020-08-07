@@ -153,7 +153,7 @@
     <p>Setkey for multiple data.tables in one function</p>
     </div>
 
-    <pre class="usage"><span class='fu'>dth_key</span>(<span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>dth_key</span>(<span class='kw'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -172,13 +172,13 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Make data.tables</span>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>require</a></span>(<span class='no'>data.table</span>)
-<span class='no'>dt1</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html'>as.data.table</a></span>(<span class='no'>iris</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>3</span>,<span class='fl'>5</span>)])
-<span class='no'>dt2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html'>as.data.table</a></span>(<span class='no'>iris</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>3</span>,<span class='fl'>5</span>)])
-<span class='no'>dt3</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html'>as.data.table</a></span>(<span class='no'>iris</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>4</span>,<span class='fl'>3</span>,<span class='fl'>5</span>)])
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>require</a></span>(<span class='kw'><a href='http://r-datatable.com'>data.table</a></span>)
+<span class='kw'>dt1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html'>as.data.table</a></span>(<span class='kw'>iris</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>3</span>,<span class='fl'>5</span>)])
+<span class='kw'>dt2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html'>as.data.table</a></span>(<span class='kw'>iris</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>3</span>,<span class='fl'>5</span>)])
+<span class='kw'>dt3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html'>as.data.table</a></span>(<span class='kw'>iris</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>4</span>,<span class='fl'>3</span>,<span class='fl'>5</span>)])
 
 <span class='co'># they have not key set</span>
-<span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>sapply</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='no'>dt1</span>,<span class='no'>dt2</span>,<span class='no'>dt3</span>), <span class='no'>key</span>)</div><div class='output co'>#&gt; [[1]]
+<span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>sapply</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>dt1</span>,<span class='kw'>dt2</span>,<span class='kw'>dt3</span>), <span class='kw'>key</span>)</div><div class='output co'>#&gt; [[1]]
 #&gt; NULL
 #&gt; 
 #&gt; [[2]]
@@ -188,7 +188,7 @@
 #&gt; NULL
 #&gt; </div><div class='input'>
 <span class='co'># First key set</span>
-<span class='fu'>dth_key</span>(<span class='no'>dt1</span>, <span class='no'>dt2</span>, <span class='no'>dt3</span>, <span class='no'>Species</span>)</div><div class='output co'>#&gt; <span class='error'>Error in names(test)[test]: invalid subscript type 'list'</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>sapply</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='no'>dt1</span>,<span class='no'>dt2</span>,<span class='no'>dt3</span>), <span class='no'>key</span>)</div><div class='output co'>#&gt; [[1]]
+<span class='fu'>dth_key</span>(<span class='kw'>dt1</span>, <span class='kw'>dt2</span>, <span class='kw'>dt3</span>, <span class='kw'>Species</span>)</div><div class='output co'>#&gt; <span class='error'>Error in names(test)[test]: invalid subscript type 'list'</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>sapply</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>dt1</span>,<span class='kw'>dt2</span>,<span class='kw'>dt3</span>), <span class='kw'>key</span>)</div><div class='output co'>#&gt; [[1]]
 #&gt; NULL
 #&gt; 
 #&gt; [[2]]
@@ -198,7 +198,7 @@
 #&gt; NULL
 #&gt; </div><div class='input'>
 <span class='co'># Key can change</span>
-<span class='fu'>dth_key</span>(<span class='no'>dt1</span>, <span class='no'>dt2</span>, <span class='no'>dt3</span>, <span class='no'>Petal.Length</span>)</div><div class='output co'>#&gt; <span class='error'>Error in names(test)[test]: invalid subscript type 'list'</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>sapply</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='no'>dt1</span>,<span class='no'>dt2</span>,<span class='no'>dt3</span>), <span class='no'>key</span>)</div><div class='output co'>#&gt; [[1]]
+<span class='fu'>dth_key</span>(<span class='kw'>dt1</span>, <span class='kw'>dt2</span>, <span class='kw'>dt3</span>, <span class='kw'>Petal.Length</span>)</div><div class='output co'>#&gt; <span class='error'>Error in names(test)[test]: invalid subscript type 'list'</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>sapply</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>dt1</span>,<span class='kw'>dt2</span>,<span class='kw'>dt3</span>), <span class='kw'>key</span>)</div><div class='output co'>#&gt; [[1]]
 #&gt; NULL
 #&gt; 
 #&gt; [[2]]
@@ -208,7 +208,7 @@
 #&gt; NULL
 #&gt; </div><div class='input'>
 <span class='co'># Key values can be a mix of quoted and non-quoted text</span>
-<span class='fu'>dth_key</span>(<span class='no'>dt1</span>, <span class='no'>dt2</span>, <span class='no'>dt3</span>, <span class='no'>Petal.Length</span>, <span class='st'>'Species'</span>)</div><div class='output co'>#&gt; <span class='error'>Error in names(test)[test]: invalid subscript type 'list'</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>sapply</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='no'>dt1</span>,<span class='no'>dt2</span>,<span class='no'>dt3</span>), <span class='no'>key</span>)</div><div class='output co'>#&gt; [[1]]
+<span class='fu'>dth_key</span>(<span class='kw'>dt1</span>, <span class='kw'>dt2</span>, <span class='kw'>dt3</span>, <span class='kw'>Petal.Length</span>, <span class='st'>'Species'</span>)</div><div class='output co'>#&gt; <span class='error'>Error in names(test)[test]: invalid subscript type 'list'</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>sapply</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>dt1</span>,<span class='kw'>dt2</span>,<span class='kw'>dt3</span>), <span class='kw'>key</span>)</div><div class='output co'>#&gt; [[1]]
 #&gt; NULL
 #&gt; 
 #&gt; [[2]]
@@ -218,10 +218,10 @@
 #&gt; NULL
 #&gt; </div><div class='input'>
 <span class='co'># order doesn't matter</span>
-<span class='no'>dt1</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html'>as.data.table</a></span>(<span class='no'>iris</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>3</span>,<span class='fl'>5</span>)])
-<span class='no'>dt2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html'>as.data.table</a></span>(<span class='no'>iris</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>3</span>,<span class='fl'>5</span>)])
-<span class='no'>dt3</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html'>as.data.table</a></span>(<span class='no'>iris</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>4</span>,<span class='fl'>3</span>,<span class='fl'>5</span>)])
-<span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>sapply</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='no'>dt1</span>,<span class='no'>dt2</span>,<span class='no'>dt3</span>), <span class='no'>key</span>)</div><div class='output co'>#&gt; [[1]]
+<span class='kw'>dt1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html'>as.data.table</a></span>(<span class='kw'>iris</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>3</span>,<span class='fl'>5</span>)])
+<span class='kw'>dt2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html'>as.data.table</a></span>(<span class='kw'>iris</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>3</span>,<span class='fl'>5</span>)])
+<span class='kw'>dt3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://Rdatatable.gitlab.io/data.table/reference/as.data.table.html'>as.data.table</a></span>(<span class='kw'>iris</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>4</span>,<span class='fl'>3</span>,<span class='fl'>5</span>)])
+<span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>sapply</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>dt1</span>,<span class='kw'>dt2</span>,<span class='kw'>dt3</span>), <span class='kw'>key</span>)</div><div class='output co'>#&gt; [[1]]
 #&gt; NULL
 #&gt; 
 #&gt; [[2]]
@@ -229,7 +229,7 @@
 #&gt; 
 #&gt; [[3]]
 #&gt; NULL
-#&gt; </div><div class='input'><span class='fu'>dth_key</span>(<span class='no'>dt1</span>,<span class='no'>Petal.Length</span>, <span class='no'>dt3</span>,<span class='st'>'Species'</span>,<span class='no'>dt2</span> )</div><div class='output co'>#&gt; <span class='error'>Error in names(test)[test]: invalid subscript type 'list'</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>sapply</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='no'>dt1</span>,<span class='no'>dt2</span>,<span class='no'>dt3</span>), <span class='no'>key</span>)</div><div class='output co'>#&gt; [[1]]
+#&gt; </div><div class='input'><span class='fu'>dth_key</span>(<span class='kw'>dt1</span>,<span class='kw'>Petal.Length</span>, <span class='kw'>dt3</span>,<span class='st'>'Species'</span>,<span class='kw'>dt2</span> )</div><div class='output co'>#&gt; <span class='error'>Error in names(test)[test]: invalid subscript type 'list'</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/lapply.html'>sapply</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>dt1</span>,<span class='kw'>dt2</span>,<span class='kw'>dt3</span>), <span class='kw'>key</span>)</div><div class='output co'>#&gt; [[1]]
 #&gt; NULL
 #&gt; 
 #&gt; [[2]]
@@ -238,7 +238,6 @@
 #&gt; [[3]]
 #&gt; NULL
 #&gt; </div><div class='input'>
-
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -255,7 +254,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>
