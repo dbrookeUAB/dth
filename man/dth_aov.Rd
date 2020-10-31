@@ -9,7 +9,7 @@ dth_aov(formula, DT, by)
 \arguments{
 \item{formula}{}
 
-\item{DT}{}
+\item{by}{}
 }
 \value{
 
