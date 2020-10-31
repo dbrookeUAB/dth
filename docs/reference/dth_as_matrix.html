@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Anova formatted for use inside data.tables — dth_aov • dth</title>
+<title>Convert a data.table to a matrix easily — dth_as_matrix • dth</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Anova formatted for use inside data.tables — dth_aov" />
-<meta property="og:description" content="Anova formatted for use inside data.tables" />
+<meta property="og:title" content="Convert a data.table to a matrix easily — dth_as_matrix" />
+<meta property="og:description" content="Convert a data.table to a matrix easily" />
 
 
 
@@ -147,27 +147,31 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Anova formatted for use inside data.tables</h1>
+    <h1>Convert a data.table to a matrix easily</h1>
     
-    <div class="hidden name"><code>dth_aov.Rd</code></div>
+    <div class="hidden name"><code>dth_as_matrix.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Anova formatted for use inside data.tables</p>
+    <p>Convert a data.table to a matrix easily</p>
     </div>
 
-    <pre class="usage"><span class='fu'>dth_aov</span>(<span class='no'>formula</span>, <span class='no'>DT</span>, <span class='no'>by</span>)</pre>
+    <pre class="usage"><span class='fu'>dth_as_matrix</span>(<span class='no'>DT</span>, <span class='kw'>rownames.col</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>set.rownames</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>formula</th>
-      <td></td>
+      <th>DT</th>
+      <td><p>data.table</p></td>
     </tr>
     <tr>
-      <th>by</th>
-      <td></td>
+      <th>rownames.col</th>
+      <td><p>character of which column to use for the matrix rownames. (Default=NULL)</p></td>
+    </tr>
+    <tr>
+      <th>set.rownames</th>
+      <td><p>logical whether to set the rownames from a column within the data.table. (Default=TRUE)</p></td>
     </tr>
     </table>
 

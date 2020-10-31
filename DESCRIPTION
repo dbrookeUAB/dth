@@ -1,6 +1,6 @@
 Package: dth
 Title: data.table helper functions
-Version: 0.0.0.9000
+Version: 1.0
 Authors@R: c(
     person("Dewey", "Brooke", , "dbrooke@uab.edu", role = c("aut", "cre"), 
       comment = c(ORCID = "0000-0003-4290-3809")
