@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,32 +33,26 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">dth</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.0</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="reference/index.html">Reference</a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/dbrookeUAB/dth">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/dbrookeUAB/dth" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    <span class="fab fa fab fa-r-project fa-lg"></span>
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fab fa-r-project fa-lg"></span>
      
     Other Packages
      
@@ -64,32 +60,32 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="https://tcgaseq.deweybrooke.org/">TCGAseq</a>
+      <a href="https://tcgaseq.deweybrooke.org/" class="external-link">TCGAseq</a>
     </li>
     <li>
-      <a href="https://gtexseq.deweybrooke.org/">GTEXseq</a>
+      <a href="https://gtexseq.deweybrooke.org/" class="external-link">GTEXseq</a>
     </li>
     <li>
-      <a href="https://gecko.deweybrooke.org/">GeCKO</a>
+      <a href="https://gecko.deweybrooke.org/" class="external-link">GeCKO</a>
     </li>
     <li>
-      <a href="https://miknn.deweybrooke.org/">miknn</a>
+      <a href="https://miknn.deweybrooke.org/" class="external-link">miknn</a>
     </li>
     <li>
-      <a href="https://dth.deweybrooke.org/">dth</a>
+      <a href="https://dth.deweybrooke.org/" class="external-link">dth</a>
     </li>
   </ul>
 </li>
 <li>
-  <a href="https://www.deweybrooke.org/">
-    <span class="fas fa fas fa-user-circle fa-lg"></span>
+  <a href="https://www.deweybrooke.org/" class="external-link">
+    <span class="fas fa-user-circle fa-lg"></span>
      
     Dewey Brooke
   </a>
 </li>
 <li>
-  <a href="http://twitter.com/deweybrooke1">
-    <span class="fab fa fab fa-twitter fa-lg"></span>
+  <a href="http://twitter.com/deweybrooke1" class="external-link">
+    <span class="fab fa-twitter fa-lg"></span>
      
   </a>
 </li>
@@ -105,59 +101,71 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="datatable-helpers-dth" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#datatable-helpers-dth" class="anchor"></a><code>data.table</code> helpers (<code>dth</code>)</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="datatable-helpers-dth">
+<code>data.table</code> helpers (<code>dth</code>)<a class="anchor" aria-label="anchor" href="#datatable-helpers-dth"></a>
+</h1></div>
 <!-- badges: start -->
 
 <p>I love using <code>data.table</code> and I spend most of my timein the console exploring through data. This package contains an array of functions meant to make data exploration in the console faster and easier.</p>
 <p>These are not meant to be used for scripts or functions.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<div class="sourceCode" id="cb1"><pre class="r">remotes::install_github('dbrookeUAB/dth)</pre></div>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">'dbrookeUAB/dth)</span></span></code></pre></div>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li>GPL (&gt;= 2)</li>
 </ul>
 </div>
-<div class="developers">
-<h2>Developers</h2>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li>Dewey Brooke <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-4290-3809" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="authors.html#citation">Citing dth</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li><a href="https://img.shields.io/github/r-package/v/dbrookeUAB/dth/master?color=green"><img src="https://img.shields.io/github/r-package/v/dbrookeUAB/dth/master?color=green" alt="GitHub R package version (branch)"></a></li>
-<li><a href="https://img.shields.io/github/stars/dbrookeUAB/dth?style=social"><img src="https://img.shields.io/github/stars/dbrookeUAB/dth?style=social" alt="GitHub Repo stars"></a></li>
-<li><a href="https://img.shields.io/github/forks/dbrookeUAB/dth?style=social"><img src="https://img.shields.io/github/forks/dbrookeUAB/dth?style=social" alt="GitHub forks"></a></li>
-<li><a href="https://travis-ci.org/dbrookeUAB/dth"><img src="https://travis-ci.org/dbrookeUAB/dth.svg?branch=master" alt="Build Status"></a></li>
-<li><a href="https://img.shields.io/github/downloads/dbrookeUAB/dth/total"><img src="https://img.shields.io/github/downloads/dbrookeUAB/dth/total" alt="GitHub All Releases"></a></li>
-<li><a href="https://img.shields.io/github/r-package/v/dbrookeUAB/dth/development"><img src="https://img.shields.io/github/r-package/v/dbrookeUAB/dth/development" alt="GitHub R package version (branch)"></a></li>
-<li><a href="https://travis-ci.org/dbrookeUAB/dth"><img src="https://travis-ci.org/dbrookeUAB/dth.svg?branch=development" alt="Build Status"></a></li>
-<li><a href="https://github.com/dbrookeUAB/dth/issues"><img src="https://img.shields.io/github/issues/dbrookeUAB/dth" alt="GitHub issues"></a></li>
-<li><a href="https://twitter.com/intent/tweet?text=Wow:&amp;url=https%3A%2F%2Fgithub.com%2FdbrookeUAB%2Fdth%2F"><img src="https://img.shields.io/twitter/url?style=social&amp;url=https%3A%2F%2Fdth.deweybrooke.org%2F" alt="Twitter"></a></li>
+<li>Dewey Brooke <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0003-4290-3809" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 </ul>
 </div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://img.shields.io/github/r-package/v/dbrookeUAB/dth/master?color=green" class="external-link"><img src="https://img.shields.io/github/r-package/v/dbrookeUAB/dth/master?color=green" alt="GitHub R package version (branch)"></a></li>
+<li><a href="https://img.shields.io/github/stars/dbrookeUAB/dth?style=social" class="external-link"><img src="https://img.shields.io/github/stars/dbrookeUAB/dth?style=social" alt="GitHub Repo stars"></a></li>
+<li><a href="https://travis-ci.org/dbrookeUAB/dth" class="external-link"><img src="https://travis-ci.org/dbrookeUAB/dth.svg?branch=master" alt="Build Status"></a></li>
+<li><a href="https://img.shields.io/github/downloads/dbrookeUAB/dth/total" class="external-link"><img src="https://img.shields.io/github/downloads/dbrookeUAB/dth/total" alt="GitHub All Releases"></a></li>
+<li><a href="https://img.shields.io/github/r-package/v/dbrookeUAB/dth/development" class="external-link"><img src="https://img.shields.io/github/r-package/v/dbrookeUAB/dth/development" alt="GitHub R package version (branch)"></a></li>
+<li><a href="https://travis-ci.org/dbrookeUAB/dth" class="external-link"><img src="https://travis-ci.org/dbrookeUAB/dth.svg?branch=development" alt="Build Status"></a></li>
+<li><a href="https://github.com/dbrookeUAB/dth/issues" class="external-link"><img src="https://img.shields.io/github/issues/dbrookeUAB/dth" alt="GitHub issues"></a></li>
+<li><a href="https://twitter.com/intent/tweet?text=Wow:&amp;url=https%3A%2F%2Fgithub.com%2FdbrookeUAB%2Fdth%2F" class="external-link"><img src="https://img.shields.io/twitter/url?style=social&amp;url=https%3A%2F%2Fdth.deweybrooke.org%2F" alt="Twitter"></a></li>
+</ul>
 </div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Dewey Brooke.</p>
+  <p></p>
+<p>Developed by Dewey Brooke.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>
@@ -165,6 +173,8 @@
 
   
 
+
+  
 
   </body>
 </html>
