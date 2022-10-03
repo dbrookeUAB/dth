@@ -11,9 +11,6 @@ dth_aov2(formula, DT)
 
 \item{DT}{}
 }
-\value{
-
-}
 \description{
 Another way to do an anova?
 }

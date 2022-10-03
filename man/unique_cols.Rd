@@ -11,13 +11,6 @@ unique_cols(df, return.DT = TRUE)
 
 \item{return.DT}{}
 }
-\value{
-
-}
 \description{
 Remove columns with only one unique value from data.tables
-}
-\examples{
-
-
 }

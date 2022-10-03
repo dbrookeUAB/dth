@@ -38,9 +38,6 @@ dth_cor(
 
 \item{trim}{}
 }
-\value{
-
-}
 \description{
 X-Y Correlation and Statistical Tests for multiple categories using data.table
 }

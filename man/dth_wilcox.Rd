@@ -15,9 +15,6 @@ dth_wilcox(formula, DT, by, ...)
 
 \item{...}{}
 }
-\value{
-
-}
 \description{
 Title
 }

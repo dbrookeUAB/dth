@@ -9,9 +9,6 @@ dth_double(x)
 \arguments{
 \item{x}{}
 }
-\value{
-
-}
 \description{
 Filter Double
 }

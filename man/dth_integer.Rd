@@ -9,9 +9,6 @@ dth_integer(x)
 \arguments{
 \item{x}{}
 }
-\value{
-
-}
 \description{
 Filter Integer
 }

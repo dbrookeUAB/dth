@@ -11,9 +11,6 @@ dth_aov(formula, DT, by)
 
 \item{by}{}
 }
-\value{
-
-}
 \description{
 Anova formatted for use inside data.tables
 }

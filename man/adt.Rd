@@ -13,9 +13,6 @@ adt(x, keep.rownames = FALSE, ...)
 
 \item{...}{}
 }
-\value{
-
-}
 \description{
 Shortcuts for a lazy person
 }

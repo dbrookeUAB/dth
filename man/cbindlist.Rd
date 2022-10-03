@@ -11,9 +11,6 @@ cbindlist(list, key, col_names = NULL)
 
 \item{col_names}{}
 }
-\value{
-
-}
 \description{
 Combine a list of data.tables column-wise
 }

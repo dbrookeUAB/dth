@@ -9,9 +9,6 @@ dth_key(...)
 \arguments{
 \item{...}{}
 }
-\value{
-
-}
 \description{
 Setkey for multiple data.tables in one function
 }

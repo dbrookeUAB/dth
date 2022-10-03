@@ -11,9 +11,6 @@ rm_lg_cols(DT, nchars = 40)
 
 \item{nchars}{}
 }
-\value{
-
-}
 \description{
 Remove columns with long character data
 }

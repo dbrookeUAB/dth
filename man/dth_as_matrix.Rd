@@ -13,9 +13,6 @@ dth_as_matrix(DT, rownames.col = NULL, set.rownames = TRUE)
 
 \item{set.rownames}{logical whether to set the rownames from a column within the data.table. (Default=TRUE)}
 }
-\value{
-
-}
 \description{
 Convert a data.table to a matrix easily
 }

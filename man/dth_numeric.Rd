@@ -9,9 +9,6 @@ dth_numeric(x)
 \arguments{
 \item{x}{}
 }
-\value{
-
-}
 \description{
 Filter Numeric
 }

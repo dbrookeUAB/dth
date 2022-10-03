@@ -41,9 +41,6 @@ dcast2(
 
 \item{verbose}{}
 }
-\value{
-
-}
 \description{
 Dcast using list columns
 }
