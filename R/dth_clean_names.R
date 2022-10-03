@@ -1,3 +1,12 @@
+#' Return R-compatible column names for a `data.table` 
+#'
+#' @param .data 
+#' @param unique 
+#'
+#' @return
+#' @export
+#'
+#' @examples
 dth_clean_names <- function(.data, unique = FALSE) {
   ## credit: https://drdoane.com/clean-consistent-column-names/
   n <- if (is.data.frame(.data)) colnames(.data) else .data
